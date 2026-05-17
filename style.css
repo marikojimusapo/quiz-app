@@ -1,0 +1,263 @@
+/* リセット・ベース */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  background: #f0f4f8;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #333;
+}
+
+/* コンテナ */
+.container {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* ヘッダー */
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+}
+
+/* プログレスバー */
+.progress-bar {
+  background: #dbeafe;
+  border-radius: 99px;
+  height: 10px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #2563eb;
+  border-radius: 99px;
+  transition: width 0.4s ease;
+  width: 20%;
+}
+
+.progress-text {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* クイズカード */
+.question-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.question-number {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #2563eb;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.question-text {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  color: #1f2937;
+}
+
+/* 選択肢 */
+.choices {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.choices li button {
+  width: 100%;
+  text-align: left;
+  padding: 14px 18px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 1rem;
+  color: #374151;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  line-height: 1.4;
+}
+
+.choices li button:hover:not(:disabled) {
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+/* 正解・不正解のスタイル */
+.choices li button.correct {
+  border-color: #16a34a;
+  background: #dcfce7;
+  color: #15803d;
+  font-weight: 600;
+}
+
+.choices li button.incorrect {
+  border-color: #dc2626;
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.choices li button:disabled {
+  cursor: default;
+}
+
+/* フィードバック */
+.feedback {
+  min-height: 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  padding: 0 4px;
+}
+
+.feedback.correct {
+  color: #16a34a;
+}
+
+.feedback.incorrect {
+  color: #dc2626;
+}
+
+/* 次へボタン */
+.btn-next {
+  width: 100%;
+  padding: 14px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  letter-spacing: 0.04em;
+}
+
+.btn-next:hover {
+  background: #1d4ed8;
+}
+
+/* 結果カード */
+.result-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 48px 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.result-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2563eb;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.score {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.score-message {
+  font-size: 1.05rem;
+  color: #6b7280;
+  margin-bottom: 36px;
+  line-height: 1.6;
+}
+
+/* 結果ボタン群 */
+.result-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-retry {
+  padding: 14px 32px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  letter-spacing: 0.04em;
+}
+
+.btn-retry:hover {
+  background: #1d4ed8;
+}
+
+.btn-exit {
+  padding: 14px 32px;
+  background: #fff;
+  color: #6b7280;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  letter-spacing: 0.04em;
+}
+
+.btn-exit:hover {
+  border-color: #9ca3af;
+  color: #374151;
+}
+
+/* レスポンシブ */
+@media (max-width: 480px) {
+  .question-card,
+  .result-card {
+    padding: 24px 18px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .question-text {
+    font-size: 1.05rem;
+  }
+
+  .score {
+    font-size: 2.2rem;
+  }
+}
