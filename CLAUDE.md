@@ -26,6 +26,10 @@ quiz-app/
 - 外部依存なし（CDN含む）
 - ファイルエンコーディングは UTF-8
 
+## GitHubリポジトリ
+
+https://github.com/marikojimusapo/quiz-app.git
+
 ## 業務ルール
 
 - ファイルの削除・上書き前には必ず確認を求めること
